@@ -41,13 +41,18 @@ time.sleep(2)
 
 
 
-#CSS SELECTOR
-icons = driver.find_element(By.CSS_SELECTOR, "div a:nth-child(1)")
-#for icon in icons:
-highlighter.highlight(icons)
+#XPATH
+svg_icons = driver.find_elements(By.XPATH,"//*[local-name()='svg']" )
+icon_count = len(svg_icons)
+print(f"The number of <svg> elements found is: {icon_count}")
+for svg in svg_icons:
+    highlighter.highlight(svg)
+
+for i, svg in enumerate(svg_icons):
+
+    width = svg.get_attribute('width')
+    print(f"SVG {i+1}: Width is {width}")
 time.sleep(5)
-
-
 print("Login successful (if your credentials didn’t fail you).")
 
 
