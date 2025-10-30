@@ -39,8 +39,6 @@ highlighter.highlight(forgot_pw)
 #forgot_pw.click()
 time.sleep(2)
 
-
-
 #XPATH
 svg_icons = driver.find_elements(By.XPATH,"//*[local-name()='svg']" )
 icon_count = len(svg_icons)
